@@ -5,7 +5,9 @@
  */
 package application;
 
+import java.io.IOException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,16 +19,6 @@ import javafx.stage.Stage;
  */
 public class JavaFXBreeding extends Application {
     
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLBreeding.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
-
     /**
      * @param args the command line arguments
      */
@@ -34,4 +26,21 @@ public class JavaFXBreeding extends Application {
         launch(args);
     }
     
+    private static Stage firstStage;
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        firstStage = stage;
+        firstStage.setResizable(false);
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLBreeding.fxml"));
+        firstStage.setTitle("Tela de login");
+        Scene scene = new Scene(root);
+        firstStage.setScene(scene);
+        firstStage.show();
+    }
+    
+    public void changeScene(String fxml) throws IOException{
+        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+        firstStage.getScene().setRoot(pane);
+    }
 }

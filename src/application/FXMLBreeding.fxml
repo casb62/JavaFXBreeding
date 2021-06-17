@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLBreedingController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLBreedingController">
+   <children>
+      <AnchorPane prefHeight="250.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="194.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="599.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutY="110.0" text="CPF:">
+                     <VBox.margin>
+                        <Insets left="150.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="textFieldLogin" layoutY="137.0" prefHeight="30.0" prefWidth="383.0">
+                     <VBox.margin>
+                        <Insets left="150.0" right="150.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutY="177.0" text="Senha:">
+                     <VBox.margin>
+                        <Insets left="150.0" />
+                     </VBox.margin>
+                  </Label>
+                  <PasswordField fx:id="passwordFieldLogin" layoutY="204.0" prefHeight="30.0" prefWidth="381.0">
+                     <VBox.margin>
+                        <Insets left="150.0" right="150.0" />
+                     </VBox.margin>
+                  </PasswordField>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="8.0" layoutY="284.0" prefHeight="206.0" prefWidth="591.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="256.0" prefHeight="34.0" prefWidth="378.0">
+               <children>
+                  <Label fx:id="labelMessageLogin" />
+               </children>
+            </HBox>
+            <Button fx:id="buttonLogin" alignment="CENTER" layoutX="8.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleButtonLogin" prefHeight="45.0" prefWidth="380.0" text="Login">
+               <VBox.margin>
+                  <Insets left="150.0" right="150.0" />
+               </VBox.margin></Button>
+            <HBox alignment="BOTTOM_CENTER" layoutX="9.0" layoutY="358.0" prefHeight="34.0" prefWidth="378.0">
+               <children>
+                  <Label text="Não tem cadastro?" />
+               </children>
+            </HBox>
+            <Button fx:id="buttonRegisterLogin" layoutX="14.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleButtonRegister" prefHeight="45.0" prefWidth="332.0" text="Cadastrar">
+               <VBox.margin>
+                  <Insets left="150.0" right="150.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
