@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLMainScreenController">
+    <children>
+      <MenuBar prefHeight="35.0" prefWidth="815.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar layoutX="14.0" layoutY="35.0" prefHeight="34.0" prefWidth="814.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <items>
+            <Button mnemonicParsing="false" text="Button" />
+         </items>
+      </ToolBar>
+      <SplitPane dividerPositions="0.25" layoutX="107.0" layoutY="70.0" prefHeight="617.0" prefWidth="815.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0">
+        <items>
+          <AnchorPane>
+               <children>
+                  <Accordion prefHeight="653.0" prefWidth="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <panes>
+                        <TitledPane animated="false" text="Ajuda">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="19.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="14.0" layoutY="14.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Hyperlink layoutX="14.0" layoutY="14.0" text="Instruções" />
+                                          <Hyperlink layoutX="14.0" layoutY="37.0" text="Sobre" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Animais">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="14.0" layoutY="14.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="14.0" layoutY="14.0">
+                                       <children>
+                                          <Hyperlink layoutX="14.0" layoutY="49.0" text="Declarar compra" />
+                                          <Hyperlink layoutX="14.0" layoutY="84.0" text="Declarar morte" />
+                                          <Hyperlink layoutX="14.0" layoutY="14.0" text="Declarar nascimento" />
+                                          <Hyperlink layoutX="14.0" layoutY="125.0" text="Declarar venda" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Clientes">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="19.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="14.0" layoutY="14.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <children>
+                                          <Hyperlink layoutX="14.0" layoutY="49.0" text="Operações" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Fornecedores">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="-13.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="31.0" layoutY="40.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Hyperlink layoutX="31.0" layoutY="144.0" text="Hyperlink" />
+                                          <Hyperlink layoutX="43.0" layoutY="98.0" text="Hyperlink" />
+                                          <Hyperlink layoutX="60.0" layoutY="40.0" text="Hyperlink" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Lotes">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="-13.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="31.0" layoutY="40.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Hyperlink layoutX="31.0" layoutY="144.0" text="Exibir lote" />
+                                          <Hyperlink layoutX="43.0" layoutY="98.0" text="Pesquisar lotes" />
+                                          <Hyperlink layoutX="60.0" layoutY="40.0" text="Simular lote" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Propriedades">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="-13.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="32.0" layoutY="40.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Hyperlink layoutX="32.0" layoutY="40.0" text="Excluir propriedade" />
+                                          <Hyperlink layoutX="45.0" layoutY="105.0" text="Incluir propriedade" />
+                                          <Hyperlink layoutX="32.0" layoutY="169.0" text="Pesquisar propriedades" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Usuários">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="-13.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="29.0" layoutY="68.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Hyperlink fx:id="hyperlinkUserRegistration" layoutX="53.0" layoutY="151.0" onAction="#handleHyperlinkUserRegistration" text="Gerenciar usuários" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Vacinas">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="-13.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="35.0" layoutY="41.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Hyperlink layoutX="35.0" layoutY="41.0" text="Declarar vacinação de brucelose" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Relatórios">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TreeView layoutX="19.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox layoutX="14.0" layoutY="14.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Hyperlink layoutX="14.0" layoutY="14.0" text="Listar animais mortos" />
+                                          <Hyperlink layoutX="14.0" layoutY="37.0" text="Listar animais por raça" />
+                                          <Hyperlink text="Listar animais vendidos" />
+                                          <Hyperlink text="Listar crias por vaca" />
+                                          <Hyperlink text="Listar rebanho por animais" />
+                                          <Hyperlink text="Listar rebanho por categorias" />
+                                          <Hyperlink text="Pesquisar animal por brinco" />
+                                          <Hyperlink text="Pesquisar animal por número" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane fx:id="tabPane" layoutX="14.0" layoutY="14.0" prefHeight="653.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="tabStart" text="Início">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="buttonUserRegistration" layoutX="32.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleHyperlinkUserRegistration" text="Gerenciar usuarios" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
