@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLProfileScreenController">
+   <children>
+      <AnchorPane prefHeight="190.0" prefWidth="600.0">
+         <children>
+            <VBox layoutX="20.0" layoutY="14.0">
+               <children>
+                  <GridPane layoutX="20.0" layoutY="14.0" prefHeight="133.0" prefWidth="560.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="66.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="514.0" minWidth="10.0" prefWidth="514.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Hyperlink fx:id="hyperlinkBack" alignment="TOP_LEFT" onAction="#handleHyperlinkBack" text="Voltar" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label text="Nome:" GridPane.rowIndex="1" />
+                        <Label text="CPF:" GridPane.rowIndex="2" />
+                        <Label text="Senha:" GridPane.rowIndex="3" />
+                        <TextField fx:id="textFieldCpf" editable="false" prefHeight="25.0" prefWidth="502.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="textFieldName" editable="false" prefHeight="25.0" prefWidth="479.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <PasswordField fx:id="passwordFieldPassword" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="labelMessage" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Label text="Id" />
+                        <Label fx:id="labelId" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" layoutY="147.0" prefHeight="39.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <Button fx:id="buttonNew" mnemonicParsing="false" onAction="#handleButtonNew" prefHeight="25.0" prefWidth="70.0" text="Novo" />
+                  <Button fx:id="buttonEdit" disable="true" mnemonicParsing="false" onAction="#handleButtonEdit" prefHeight="25.0" prefWidth="69.0" text="Editar" />
+                  <Button fx:id="buttonDelete" disable="true" mnemonicParsing="false" onAction="#handleButtonDelete" prefHeight="25.0" prefWidth="70.0" text="Excluir" />
+                  <TextField fx:id="textFieldSearch" prefHeight="25.0" prefWidth="200.0" />
+                  <Button fx:id="buttonSearch" mnemonicParsing="false" onAction="#handleButtonSearch" prefHeight="25.0" prefWidth="70.0" text="Pesquisar" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-1.0" layoutY="196.0" prefHeight="200.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="tableViewUsers" editable="true" layoutX="23.0" layoutY="2.0" onKeyReleased="#userClickOnTable" onMouseClicked="#userClickOnTable" prefHeight="200.0" prefWidth="560.0">
+              <columns>
+                  <TableColumn fx:id="tableColumnId" minWidth="44.0" prefWidth="44.0" text="ID" />
+                <TableColumn fx:id="tableColumnName" minWidth="366.0" prefWidth="366.0" text="NOME" />
+                <TableColumn fx:id="tableColumnCpf" minWidth="155.0" prefWidth="155.0" text="CPF" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER" layoutX="13.0" layoutY="401.0" prefHeight="39.0" prefWidth="573.0" spacing="50.0">
+         <children>
+            <Button fx:id="buttonSave" disable="true" mnemonicParsing="false" onAction="#handleButtonSave" prefHeight="25.0" prefWidth="80.0" text="Salvar" />
+            <Button fx:id="buttonCancel" disable="true" mnemonicParsing="false" onAction="#handleButtonCancel" prefHeight="25.0" prefWidth="80.0" text="Cancelar" />
+            <Button fx:id="buttonGeneratePdf" mnemonicParsing="false" onAction="#handleButtonGeneratePdf" text="Gerar pdf" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
