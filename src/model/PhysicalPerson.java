@@ -26,5 +26,4 @@ public class PhysicalPerson extends Person {
     public String toString() {
         return "PhysicalPerson{" + "Id=" + super.getId() + "Nome=" + super.getName() + "Fone=" + super.getFone() + "Fax=" + super.getFax() + "Email=" + super.getEmail() + "Logado=" + super.getLogged() + "cpf=" + cpf + '}';
     }
-
 }

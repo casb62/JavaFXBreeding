@@ -5,7 +5,7 @@
  */
 package controller;
 
-import application.JavaFXBreeding;
+import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -16,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
@@ -32,7 +31,7 @@ import model.User;
  *
  * @author Battistuzzo
  */
-public class FXMLProfileScreenController implements Initializable {
+public class FXMLUserManagementScreenController implements Initializable {
 
     int flag = 0;
     User user = new User();
@@ -51,6 +50,10 @@ public class FXMLProfileScreenController implements Initializable {
     @FXML
     private TextField textFieldName;
     @FXML
+    private Button buttonEdit;
+    @FXML
+    private Button buttonDelete;
+    @FXML
     private TextField textFieldSearch;
     @FXML
     private Button buttonSearch;
@@ -67,7 +70,7 @@ public class FXMLProfileScreenController implements Initializable {
     @FXML
     private TableColumn<User, String> tableColumnCpf;
     @FXML
-    private Hyperlink hyperlinkBack;
+    private Button buttonGeneratePdf;
 
     /**
      * Initializes the controller class.
@@ -141,6 +144,44 @@ public class FXMLProfileScreenController implements Initializable {
     }
 
     @FXML
+    private void handleButtonEdit(ActionEvent event) {
+        flag = 2;
+        textFieldName.setEditable(true);
+        textFieldCpf.setEditable(true);
+        passwordFieldPassword.setEditable(true);
+        buttonSave.setDisable(false);
+        buttonCancel.setDisable(false);
+        buttonEdit.setDisable(true);
+        buttonNew.setDisable(true);
+        buttonDelete.setDisable(true);
+    }
+
+    @FXML
+    private void handleButtonDelete(ActionEvent event) {
+        int answer;
+        answer = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir este usuário?");
+        if (answer == JOptionPane.YES_OPTION) {
+            user.setId(Integer.parseInt(labelId.getText()));
+            user.deleteUser(user);
+            labelMessage.setText("Usuário excluído com sucesso!");
+            textFieldName.setText("");
+            textFieldCpf.setText("");
+            passwordFieldPassword.setText("");
+            textFieldName.setEditable(false);
+            textFieldCpf.setEditable(false);
+            passwordFieldPassword.setEditable(false);
+            buttonSave.setDisable(true);
+            buttonNew.setDisable(false);
+            buttonCancel.setDisable(true);
+            labelId.setText("");
+            textFieldSearch.setText("");
+            buttonEdit.setDisable(true);
+            buttonDelete.setDisable(true);
+            fillTable();
+        }
+    }
+
+    @FXML
     private void handleButtonSearch(ActionEvent event) {
         user.setName(textFieldSearch.getText());
         user.searchUser(user);
@@ -148,6 +189,8 @@ public class FXMLProfileScreenController implements Initializable {
         textFieldName.setText(user.getName());
         textFieldCpf.setText(user.getCpf());
         passwordFieldPassword.setText(user.getPassword());
+        buttonEdit.setDisable(false);
+        buttonDelete.setDisable(false);
     }
 
     @FXML
@@ -158,6 +201,8 @@ public class FXMLProfileScreenController implements Initializable {
         buttonSave.setDisable(true);
         buttonCancel.setDisable(true);
         buttonNew.setDisable(false);
+        buttonEdit.setDisable(true);
+        buttonDelete.setDisable(true);
     }
 
     public void fillTable() {
@@ -187,15 +232,18 @@ public class FXMLProfileScreenController implements Initializable {
         textFieldCpf.setText(user.getCpf());
         passwordFieldPassword.setText(user.getPassword());
         buttonNew.setDisable(false);
+        buttonEdit.setDisable(false);
+        buttonDelete.setDisable(false);
     }
 
     @FXML
-    private void handleHyperlinkBack(ActionEvent event) {
-        JavaFXBreeding breeding = new JavaFXBreeding();
+    private void handleButtonGeneratePdf(ActionEvent event) {
         try {
-            breeding.changeScene("/application/FXMLBreeding.fxml");
+            user.generatePdf();
+        } catch (DocumentException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao escrever em arquivo:\n" + ex.getMessage());
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao carregar tela" + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao abrir arquivo:\n" + ex.getMessage());
         }
     }
 }

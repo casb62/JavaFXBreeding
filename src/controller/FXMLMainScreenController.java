@@ -16,8 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -27,13 +26,13 @@ import javafx.scene.shape.Rectangle;
 public class FXMLMainScreenController implements Initializable {
 
     @FXML
-    private Hyperlink hyperlinkUserRegistration;
-    @FXML
     private TabPane tabPane;
     @FXML
     private Tab tabStart;
     @FXML
-    private Button buttonUserRegistration;
+    private Hyperlink hyperlinkUserManagement;
+    @FXML
+    private Button buttonUserManagement;
 
     /**
      * Initializes the controller class.
@@ -44,31 +43,21 @@ public class FXMLMainScreenController implements Initializable {
     }    
 
     @FXML
-    private void handleHyperlinkUserRegistration(ActionEvent event) {
-        openUserRegistration();
+    private void handleHyperlinkUserManagement(ActionEvent event) {
+        openUserManagement();
     }
     
-    private void openUserRegistration(){
+    private void openUserManagement() {
         try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/FXMLProfileScreen.fxml"));
-                Parent root = (Parent) fxmlLoader.load();
-                //Stage stage = new Stage();
-                //stage.initStyle(StageStyle.DECORATED);
-                //stage.setTitle("Tela de cadastro de usuários");
-                //stage.setScene(new Scene(root));
-                //stage.show();
-            
-                Tab tab = new Tab();
-                tab.setText("Gerenciamento de usuários");
-                //tab.setContent(new Rectangle(500,50, Color.LIGHTSTEELBLUE));
-                tab.setContent(root);
-                //tab
-                tabPane.getTabs().add(tab);
-                tabPane.getSelectionModel().select(tab);
-                
-                
-            } catch (Exception e) {
-                System.out.println("Não foi possível carregar a tela de cadastro de usuários. " + e);
-            }
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/FXMLUserManagementScreen.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Tab tab = new Tab();
+            tab.setText("Gerenciamento de usuários");
+            tab.setContent(root);
+            tabPane.getTabs().add(tab);
+            tabPane.getSelectionModel().select(tab);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao carregar a tela de cadastro de usuários.\nErro: " + e);
+        }
     }
 }

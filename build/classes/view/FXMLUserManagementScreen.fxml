@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLProfileScreenController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLUserManagementScreenController">
    <children>
       <AnchorPane prefHeight="190.0" prefWidth="600.0">
          <children>
@@ -25,7 +25,6 @@
                       <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Hyperlink fx:id="hyperlinkBack" alignment="TOP_LEFT" onAction="#handleHyperlinkBack" text="Voltar" textAlignment="CENTER" GridPane.columnIndex="1" />
                         <Label text="Nome:" GridPane.rowIndex="1" />
                         <Label text="CPF:" GridPane.rowIndex="2" />
                         <Label text="Senha:" GridPane.rowIndex="3" />
@@ -42,6 +41,8 @@
             <HBox alignment="CENTER" layoutY="147.0" prefHeight="39.0" prefWidth="600.0" spacing="20.0">
                <children>
                   <Button fx:id="buttonNew" mnemonicParsing="false" onAction="#handleButtonNew" prefHeight="25.0" prefWidth="70.0" text="Novo" />
+                  <Button fx:id="buttonEdit" disable="true" mnemonicParsing="false" onAction="#handleButtonEdit" prefHeight="25.0" prefWidth="69.0" text="Editar" />
+                  <Button fx:id="buttonDelete" disable="true" mnemonicParsing="false" onAction="#handleButtonDelete" prefHeight="25.0" prefWidth="70.0" text="Excluir" />
                   <TextField fx:id="textFieldSearch" prefHeight="25.0" prefWidth="200.0" />
                   <Button fx:id="buttonSearch" mnemonicParsing="false" onAction="#handleButtonSearch" prefHeight="25.0" prefWidth="70.0" text="Pesquisar" />
                </children>
@@ -63,6 +64,7 @@
          <children>
             <Button fx:id="buttonSave" disable="true" mnemonicParsing="false" onAction="#handleButtonSave" prefHeight="25.0" prefWidth="80.0" text="Salvar" />
             <Button fx:id="buttonCancel" disable="true" mnemonicParsing="false" onAction="#handleButtonCancel" prefHeight="25.0" prefWidth="80.0" text="Cancelar" />
+            <Button fx:id="buttonGeneratePdf" mnemonicParsing="false" onAction="#handleButtonGeneratePdf" text="Gerar pdf" />
          </children>
       </HBox>
    </children>

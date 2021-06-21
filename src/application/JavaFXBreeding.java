@@ -41,6 +41,14 @@ public class JavaFXBreeding extends Application {
     
     public void changeScene(String fxml) throws IOException{
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        firstStage.getScene().setRoot(pane);
+        String a = "/view/FXMLProfileScreen.fxml";
+        String b = "/application/FXMLBreeding.fxml";
+        if(fxml.equals(a)){
+            firstStage.setTitle("Tela de cadastro de usuários");
+            firstStage.getScene().setRoot(pane);
+        }else if(fxml.equals(b)){
+            firstStage.setTitle("Tela de login");
+            firstStage.getScene().setRoot(pane);
+        }
     }
 }

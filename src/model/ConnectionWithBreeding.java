@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class ConnectionWithBreeding {
@@ -39,4 +41,21 @@ public class ConnectionWithBreeding {
             JOptionPane.showMessageDialog(null, "Erro ao consultar o banco de dados:\n" + ex.getMessage());
         }
     }
+    
+    public List<User> selectAllUsers() throws SQLException{
+        List<User> list = new ArrayList();
+        this.connect();
+        this.executeQuery("SELECT * FROM person");
+        this.resultSet.first();
+            do {
+                int id = this.resultSet.getInt("id"); 
+                String name = this.resultSet.getString("name");
+                String cpf = this.resultSet.getString("cpf");
+                String password = this.resultSet.getString("password");
+                User user = new User(id, name, null, null, null, password, false, cpf);
+                list.add(user);
+            } while (this.resultSet.next());
+        this.disconnect();
+        return list;
+    } 
 }
