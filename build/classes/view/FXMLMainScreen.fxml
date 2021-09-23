@@ -32,9 +32,9 @@
             <Button mnemonicParsing="false" text="Button" />
          </items>
       </ToolBar>
-      <SplitPane dividerPositions="0.25" layoutX="107.0" layoutY="70.0" prefHeight="617.0" prefWidth="815.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0">
+      <SplitPane dividerPositions="0.2521525215252153" layoutX="107.0" layoutY="70.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
         <items>
-          <AnchorPane>
+          <AnchorPane prefHeight="615.0" prefWidth="198.0" SplitPane.resizableWithParent="false">
                <children>
                   <Accordion prefHeight="653.0" prefWidth="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <panes>
@@ -123,9 +123,7 @@
                                     <TreeView layoutX="-13.0" layoutY="14.0" prefHeight="577.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                     <VBox layoutX="32.0" layoutY="40.0" prefHeight="502.0" prefWidth="237.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Hyperlink layoutX="32.0" layoutY="40.0" text="Excluir propriedade" />
-                                          <Hyperlink layoutX="45.0" layoutY="105.0" text="Incluir propriedade" />
-                                          <Hyperlink layoutX="32.0" layoutY="169.0" text="Pesquisar propriedades" />
+                                          <Hyperlink fx:id="hyperlinkFarmManagement" layoutX="32.0" layoutY="40.0" onAction="#handleHyperlinkFarmManagement" text="Gerenciar fazendas" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -185,15 +183,17 @@
                   </Accordion>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1000.0">
                <children>
-                  <TabPane fx:id="tabPane" layoutX="14.0" layoutY="14.0" prefHeight="653.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TabPane fx:id="tabPane" layoutX="14.0" layoutY="14.0" prefHeight="653.0" prefWidth="606.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>
-                      <Tab fx:id="tabStart" text="Início">
+                      <Tab fx:id="tabStart" closable="false" text="Início">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
                                     <Button fx:id="buttonUserManagement" layoutX="32.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleHyperlinkUserManagement" text="Gerenciar usuarios" />
+                                    <Button fx:id="buttonFarmManagement" layoutX="32.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleHyperlinkFarmManagement" text="Gerenciar fazendas" />
+                                    <Button fx:id="buttonTeste" layoutX="32.0" layoutY="167.0" mnemonicParsing="false" onAction="#hundleButtonTeste" text="Teste" />
                                  </children></AnchorPane>
                         </content>
                       </Tab>

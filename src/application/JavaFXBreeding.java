@@ -51,4 +51,8 @@ public class JavaFXBreeding extends Application {
             firstStage.getScene().setRoot(pane);
         }
     }
+    
+    public void closeWindow(){
+        firstStage.close();
+    }
 }

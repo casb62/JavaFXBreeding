@@ -68,6 +68,8 @@ public class FXMLBreedingController implements Initializable {
                     stage.setTitle("Tela principal");
                     stage.setScene(new Scene(root));
                     stage.show();
+                    JavaFXBreeding javaFXBreeding = new JavaFXBreeding();
+                    javaFXBreeding.closeWindow();
                 } catch (Exception e) {
                     System.out.println("Não foi possível carregar a tela principal. " + e);
                 }

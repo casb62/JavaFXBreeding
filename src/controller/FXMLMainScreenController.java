@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -33,6 +34,12 @@ public class FXMLMainScreenController implements Initializable {
     private Hyperlink hyperlinkUserManagement;
     @FXML
     private Button buttonUserManagement;
+    @FXML
+    private Hyperlink hyperlinkFarmManagement;
+    @FXML
+    private Button buttonFarmManagement;
+    @FXML
+    private Button buttonTeste;
 
     /**
      * Initializes the controller class.
@@ -40,8 +47,8 @@ public class FXMLMainScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
+    } 
+    
     @FXML
     private void handleHyperlinkUserManagement(ActionEvent event) {
         openUserManagement();
@@ -54,10 +61,53 @@ public class FXMLMainScreenController implements Initializable {
             Tab tab = new Tab();
             tab.setText("Gerenciamento de usuários");
             tab.setContent(root);
+            tab.setClosable(true);
             tabPane.getTabs().add(tab);
             tabPane.getSelectionModel().select(tab);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao carregar a tela de cadastro de usuários.\nErro: " + e);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao carregar a tela de cadastro de usuários.\nErro: " + ex);
+        }
+    }
+
+    @FXML
+    private void handleHyperlinkFarmManagement(ActionEvent event) {
+        openFarmManagement();
+    }
+        
+    private void openFarmManagement() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/FXMLFarmManagementScreen.fxml"));
+            Parent root;
+            root = (Parent) fxmlLoader.load();
+            Tab tab = new Tab();
+            tab.setText("Gerenciamento de fazendas");
+            tab.setContent(root);
+            tab.setClosable(true);
+            tabPane.getTabs().add(tab);
+            tabPane.getSelectionModel().select(tab);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao carregar a tela de cadastro de fazendas.\nErro: " + ex);
+        }
+    }
+
+    @FXML
+    private void hundleButtonTeste(ActionEvent event) {
+        openTeste();
+    }
+    
+    private void openTeste(){
+        try{
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/FXMLTeste.fxml"));
+          Parent root;
+          root = (Parent) fxmlLoader.load();
+          Tab tab = new Tab();
+          tab.setText("Teste");
+          tab.setContent(root);
+          tab.setClosable(true);
+          tabPane.getTabs().add(tab);
+          tabPane.getSelectionModel().select(tab);
+        }catch(IOException ex){
+            JOptionPane.showMessageDialog(null, "Erro ao carregar teste.\nErro: " + ex);
         }
     }
 }

@@ -57,5 +57,22 @@ public class ConnectionWithBreeding {
             } while (this.resultSet.next());
         this.disconnect();
         return list;
-    } 
+    }
+    
+    public List<Farm> selectAllFarms() throws SQLException{
+        List<Farm> list = new ArrayList();
+        this.connect();
+        this.executeQuery("SELECT * FROM farm");
+        this.resultSet.first();
+            do {
+                int id = this.resultSet.getInt("id"); 
+                String name = this.resultSet.getString("name");
+                String stateRegistry = this.resultSet.getString("stateRegistry");
+                int personId = this.resultSet.getInt("personId");
+                Farm farm = new Farm(id, name, stateRegistry, personId);
+                list.add(farm);
+            } while (this.resultSet.next());
+        this.disconnect();
+        return list;
+    }
 }
