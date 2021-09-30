@@ -76,7 +76,7 @@ public class Farm {
     public void saveFarm(Farm farm){
         cwb.connect();
         try{
-           PreparedStatement pst = cwb.connection.prepareStatement("INSERT INTO farm(name, stateRegistry, personId) VALUES(?,?,?)");
+           PreparedStatement pst = cwb.connection.prepareStatement("INSERT INTO farm(name, stateregistry, fk_person_Id) VALUES(?,?,?)");
            pst.setString(1, farm.getName());
            pst.setString(2, farm.getStateRegistry());
            pst.setInt(3, farm.getPersonId());

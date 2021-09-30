@@ -29,29 +29,29 @@
                <children>
                   <HBox prefHeight="30.0" prefWidth="980.0" spacing="40.0">
                      <children>
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Novo" />
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Editar" />
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Excluir" />
-                        <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="360.0" />
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Pesquisar" />
+                        <Button fx:id="buttonNew" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonNew" prefHeight="25.0" prefWidth="70.0" text="Novo" />
+                        <Button fx:id="buttonEdit" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Editar" />
+                        <Button fx:id="buttonDelete" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Excluir" />
+                        <TextField fx:id="textFieldSearch" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="360.0" />
+                        <Button fx:id="buttonSearch" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Pesquisar" />
                      </children>
                      <padding>
                         <Insets left="10.0" />
                      </padding>
                   </HBox>
-                  <TableView layoutY="34.0" prefHeight="196.0" prefWidth="980.0">
+                  <TableView id="tableViewFarms" fx:id="tableViewFarms" layoutY="34.0" prefHeight="196.0" prefWidth="980.0">
                     <columns>
-                      <TableColumn prefWidth="32.0" text="ID" />
-                      <TableColumn prefWidth="307.0" text="NOME" />
-                      <TableColumn minWidth="0.0" prefWidth="141.0" text="INSCRIÇÃO ESTADUAL" />
-                      <TableColumn prefWidth="498.0" text="PROPRIETÁRIO" />
+                      <TableColumn fx:id="tableColumnId" prefWidth="32.0" text="ID" />
+                      <TableColumn fx:id="tableColumnName" prefWidth="307.0" text="NOME" />
+                      <TableColumn fx:id="tableColumnStateRegistry" minWidth="0.0" prefWidth="141.0" text="INSCRIÇÃO ESTADUAL" />
+                      <TableColumn fx:id="tableColumnOwner" prefWidth="498.0" text="PROPRIETÁRIO" />
                     </columns>
                   </TableView>
                   <HBox layoutY="240.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="980.0" spacing="300.0">
                      <children>
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Salvar" />
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Cancelar" />
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Gerar PDF" />
+                        <Button fx:id="buttonSave" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonSave" prefHeight="25.0" prefWidth="70.0" text="Salvar" />
+                        <Button fx:id="buttonCancel" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Cancelar" />
+                        <Button fx:id="buttonGeneratePdf" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Gerar PDF" />
                      </children>
                      <padding>
                         <Insets left="10.0" />
@@ -69,6 +69,14 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
+                              <Label fx:id="labelMessage">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
                            </children>
                            <padding>
                               <Insets left="10.0" />
@@ -77,11 +85,11 @@
                         <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="980.0" spacing="10.0">
                            <children>
                               <Label text="Id:" />
-                              <Label text="Label" />
+                              <Label fx:id="labelId" text="Label" />
                               <Label text="Nome:" />
-                              <TextField prefHeight="25.0" prefWidth="427.0" />
+                              <TextField fx:id="textFieldName" prefHeight="25.0" prefWidth="427.0" />
                               <Label text="Inscrição Estadual:" />
-                              <TextField />
+                              <TextField fx:id="textFieldStateRegistry" />
                            </children>
                            <padding>
                               <Insets left="10.0" />
@@ -105,7 +113,7 @@
                               <Label text="Id:" />
                               <Label text="Label" />
                               <Label text="Tipo:" />
-                              <ChoiceBox prefWidth="150.0" />
+                              <ChoiceBox fx:id="choiceBoxType" onMouseClicked="#pickType" prefWidth="150.0" />
                               <Label text="Nome:" />
                               <TextField prefHeight="25.0" prefWidth="353.0" />
                               <Label text="Número:" />
