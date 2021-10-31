@@ -3,5 +3,25 @@
  */
 
 .mainFxmlClass {
+ 
+}
 
+.button {
+ -fx-text-fill: #008000; /* green */
+ -fx-font-size: 12pt; 
+}
+
+.label {
+ -fx-background-color: #aadd55 ; 
+ -fx-min-width : 80px; 
+ -fx-min-height: 42px; 
+ -fx-font-weight: italic; 
+ -fx-padding: 4px; 
+}
+
+.text-field {
+ -fx-min-width: 380px; 
+ -fx-text-fill: #1100cc; 
+ -fx-background-color: #ccffcc ; 
+ -fx-font-style: italic; 
 }

@@ -51,8 +51,9 @@ public class ConnectionWithBreeding {
                 int id = this.resultSet.getInt("id"); 
                 String name = this.resultSet.getString("name");
                 String cpf = this.resultSet.getString("cpf");
+                String cnpj = this.resultSet.getString("cnpj");
                 String password = this.resultSet.getString("password");
-                User user = new User(id, name, null, null, null, password, false, cpf);
+                User user = new User(id, name, null, null, null, password, false, cpf,cnpj);
                 list.add(user);
             } while (this.resultSet.next());
         this.disconnect();

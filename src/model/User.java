@@ -16,13 +16,13 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class User extends PhysicalPerson{
+public class User extends Person{
     
     public User() {
     }
 
-    public User(Integer id, String name, String fone, String fax, String email, String password, Boolean logged, String cpf) {
-        super(id, name, fone, fax, email, password, logged, cpf);
+    public User(Integer id, String name, String fone, String fax, String email, String password, Boolean logged, String cpf, String cnpj) {
+        super(id, name, fone, fax, email, password, logged, cpf, cnpj);
     }
 
     ConnectionWithBreeding cwb = new ConnectionWithBreeding();

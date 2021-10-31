@@ -96,7 +96,7 @@ public class Farm {
                 farm.setId(cwb.resultSet.getInt("id"));
                 farm.setName(cwb.resultSet.getString("name"));
                 farm.setStateRegistry(cwb.resultSet.getString("stateRegistry"));
-                farm.setPersonId(cwb.resultSet.getInt("personId"));
+                farm.setPersonId(cwb.resultSet.getInt("fk_person_id"));
             } while (cwb.resultSet.next());
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao pesquisar propriedade no banco de dados.\nErro: " + ex);

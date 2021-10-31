@@ -76,6 +76,20 @@ public class FXMLProfileScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         fillTable();
     }
+    
+    @FXML
+    private void handleButtonNew(ActionEvent event) {
+        flag = 1;
+        labelId.setText("");
+        textFieldName.setEditable(true);
+        textFieldName.setText("");
+        textFieldCpf.setEditable(true);
+        textFieldCpf.setText("");
+        passwordFieldPassword.setEditable(true);
+        passwordFieldPassword.setText("");
+        buttonSave.setDisable(false);
+        buttonCancel.setDisable(false);
+    }
 
     @FXML
     private void handleButtonSave(ActionEvent event) {
@@ -126,19 +140,7 @@ public class FXMLProfileScreenController implements Initializable {
         fillTable();
     }
 
-    @FXML
-    private void handleButtonNew(ActionEvent event) {
-        flag = 1;
-        labelId.setText("");
-        textFieldName.setEditable(true);
-        textFieldName.setText("");
-        textFieldCpf.setEditable(true);
-        textFieldCpf.setText("");
-        passwordFieldPassword.setEditable(true);
-        passwordFieldPassword.setText("");
-        buttonSave.setDisable(false);
-        buttonCancel.setDisable(false);
-    }
+    
 
     @FXML
     private void handleButtonSearch(ActionEvent event) {
